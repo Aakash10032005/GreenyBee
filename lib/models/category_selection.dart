@@ -250,6 +250,17 @@ class _CategorySelectionState extends State<CategorySelection> {
                                   Navigator.of(context).pop();
                                 },
                               ),
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    isFilled = !isFilled;
+                                  });
+                                },
+                                icon: Icon(
+                                  isFilled ? Icons.favorite_border_outlined : Icons.favorite,
+                                  color: isFilled ? Colors.grey : Colors.red,
+                                ),
+                              ),
                               TextButton(
                                 child: Text("Close"),
                                 onPressed: () => Navigator.of(context).pop(),
@@ -376,6 +387,17 @@ class _CategorySelectionState extends State<CategorySelection> {
                                   // Implement add to cart functionality here
                                   Navigator.of(context).pop();
                                 },
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    isFilled = !isFilled;
+                                  });
+                                },
+                                icon: Icon(
+                                  isFilled ? Icons.favorite_border_outlined : Icons.favorite,
+                                  color: isFilled ? Colors.grey : Colors.red,
+                                ),
                               ),
                               TextButton(
                                 child: Text("Close"),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:greenybeenew/constants.dart';
 
 class FavoritePage extends StatelessWidget {
@@ -9,10 +10,11 @@ class FavoritePage extends StatelessWidget {
       appBar: AppBar(
         title: Center(
           child: Text(
-              "Favorites",
-          style: TextStyle(
-            color: titletextcolour,
-          ),),
+            "Favorites",
+            style: TextStyle(
+              color: titletextcolour,
+            ),
+          ),
         ),
         backgroundColor: homescreenbackgroundcolour,
       ),
@@ -46,7 +48,9 @@ class FavoritePage extends StatelessWidget {
 
 class FavoriteCard extends StatelessWidget {
   final String imageLocation;
+
   final String name;
+
   final String description;
 
   const FavoriteCard({
