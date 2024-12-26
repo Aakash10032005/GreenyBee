@@ -48,7 +48,7 @@ class _CategorySelectionState extends State<CategorySelection> {
                   child: Text(
                     categories[index],
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 22,
                       color: indexCategory == index
                           ? titletextcolour
                           : Colors.black45,
@@ -196,6 +196,8 @@ class _CategorySelectionState extends State<CategorySelection> {
             ),
             itemCount: pots.length,
             itemBuilder: (context, index) {
+              bool isFilled = pots[index].name == "Ganesha Face Clay Pot"; // Check pot name
+
               return GestureDetector(
                 onTap: () {
                   showDialog(
@@ -253,12 +255,12 @@ class _CategorySelectionState extends State<CategorySelection> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    isFilled = !isFilled;
+                                    // No need to update state here, isFilled is based on pot name
                                   });
                                 },
                                 icon: Icon(
-                                  isFilled ? Icons.favorite_border_outlined : Icons.favorite,
-                                  color: isFilled ? Colors.grey : Colors.red,
+                                  isFilled ? Icons.favorite : Icons.favorite_border_outlined,
+                                  color: isFilled ? Colors.red : Colors.grey,
                                 ),
                               ),
                               TextButton(
@@ -298,7 +300,7 @@ class _CategorySelectionState extends State<CategorySelection> {
                             pots[index].name,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 14,
                               color: titletextcolour,
                               fontWeight: FontWeight.bold,
                             ),
@@ -334,6 +336,13 @@ class _CategorySelectionState extends State<CategorySelection> {
             ),
             itemCount: plants.length,
             itemBuilder: (context, index) {
+              // Check plant name for conditional filling of heart button
+              bool isFilled = [
+                "Ganesha Face Clay Pot",
+                "Ixora Light Pink",
+                "Madras Thorn"
+              ].contains(plants[index].name);
+
               return GestureDetector(
                 onTap: () {
                   showDialog(
@@ -391,12 +400,12 @@ class _CategorySelectionState extends State<CategorySelection> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    isFilled = !isFilled;
+                                    // No need to update state here, isFilled is based on plant name
                                   });
                                 },
                                 icon: Icon(
-                                  isFilled ? Icons.favorite_border_outlined : Icons.favorite,
-                                  color: isFilled ? Colors.grey : Colors.red,
+                                  isFilled ? Icons.favorite : Icons.favorite_border_outlined,
+                                  color: isFilled ? Colors.red : Colors.grey,
                                 ),
                               ),
                               TextButton(
@@ -436,7 +445,7 @@ class _CategorySelectionState extends State<CategorySelection> {
                             plants[index].name,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 14,
                               color: titletextcolour,
                               fontWeight: FontWeight.bold,
                             ),

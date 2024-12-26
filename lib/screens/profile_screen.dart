@@ -77,6 +77,7 @@ class ProfilePage extends StatelessWidget {
               title: Text('Logout'),
               onTap: () {
                 // Handle logout action
+                Navigator.pushReplacementNamed(context, '/'); // Navigate to the root route (likely LoginPage)
               },
             ),
           ],

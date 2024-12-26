@@ -7,7 +7,10 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  int quantity = 1;
+  // Individual quantity variables for each product
+  int ixoraQuantity = 1;
+  int madrasQuantity = 1;
+  int ganeshaPotQuantity = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +19,11 @@ class _CartPageState extends State<CartPage> {
       appBar: AppBar(
         title: Center(
             child: Text(
-          "Your Cart",
-          style: TextStyle(
-            color: titletextcolour,
-          ),
-        )),
+              "Your Cart",
+              style: TextStyle(
+                color: titletextcolour,
+              ),
+            )),
         backgroundColor: homescreenbackgroundcolour,
       ),
       body: Padding(
@@ -28,7 +31,7 @@ class _CartPageState extends State<CartPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Product Item
+            // Product Item - Ixora Light Pink
             Card(
               margin: EdgeInsets.symmetric(vertical: 5),
               child: Padding(
@@ -69,19 +72,19 @@ class _CartPageState extends State<CartPage> {
                           icon: Icon(Icons.remove),
                           onPressed: () {
                             setState(() {
-                              if (quantity > 1) quantity--;
+                              if (ixoraQuantity > 1) ixoraQuantity--;
                             });
                           },
                         ),
                         Text(
-                          '$quantity',
+                          '$ixoraQuantity',
                           style: TextStyle(fontSize: 16),
                         ),
                         IconButton(
                           icon: Icon(Icons.add),
                           onPressed: () {
                             setState(() {
-                              quantity++;
+                              ixoraQuantity++;
                             });
                           },
                         ),
@@ -91,6 +94,8 @@ class _CartPageState extends State<CartPage> {
                 ),
               ),
             ),
+
+            // Product Item - Madras Thorn
             Card(
               margin: EdgeInsets.symmetric(vertical: 5),
               child: Padding(
@@ -131,19 +136,19 @@ class _CartPageState extends State<CartPage> {
                           icon: Icon(Icons.remove),
                           onPressed: () {
                             setState(() {
-                              if (quantity > 1) quantity--;
+                              if (madrasQuantity > 1) madrasQuantity--;
                             });
                           },
                         ),
                         Text(
-                          '$quantity',
+                          '$madrasQuantity',
                           style: TextStyle(fontSize: 16),
                         ),
                         IconButton(
                           icon: Icon(Icons.add),
                           onPressed: () {
                             setState(() {
-                              quantity++;
+                              madrasQuantity++;
                             });
                           },
                         ),
@@ -153,6 +158,8 @@ class _CartPageState extends State<CartPage> {
                 ),
               ),
             ),
+
+            // Product Item - Ganesha Face Clay Pot
             Card(
               margin: EdgeInsets.symmetric(vertical: 5),
               child: Padding(
@@ -193,19 +200,19 @@ class _CartPageState extends State<CartPage> {
                           icon: Icon(Icons.remove),
                           onPressed: () {
                             setState(() {
-                              if (quantity > 1) quantity--;
+                              if (ganeshaPotQuantity > 1) ganeshaPotQuantity--;
                             });
                           },
                         ),
                         Text(
-                          '$quantity',
+                          '$ganeshaPotQuantity',
                           style: TextStyle(fontSize: 16),
                         ),
                         IconButton(
                           icon: Icon(Icons.add),
                           onPressed: () {
                             setState(() {
-                              quantity++;
+                              ganeshaPotQuantity++;
                             });
                           },
                         ),
